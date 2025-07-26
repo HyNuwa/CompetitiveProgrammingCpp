@@ -152,4 +152,28 @@ int main() {
     a.swap(b);
     // ahora a={4,5} y b={1,2,3}
 
+
+    //lower_bound() y upper_bound() - Devuelven iteradores 
+    //al primer elemento que no es menor que (lower_bound) o al primer elemento que es mayor que (upper_bound) un valor dado. Requieren que el vector esté ordenado.
+    //con contenedores asocioados como set, map, multiset, multimap, etc., se pueden usar directamente sin necesidad de ordenar.
+    //equal_range() - Devuelve un par de iteradores que representan el rango de elementos
+    //O(n log n) para ordenar, O(log n) para buscar con lower_bound, upper_bound o equal_range.
+    vector<int> v = {1, 2, 2, 3, 5, 5, 5, 8};
+    int x = 5;
+
+    // lower_bound: primer >= 5
+    auto lo = lower_bound(v.begin(), v.end(), x);
+    // upper_bound: primer > 5
+    auto hi = upper_bound(v.begin(), v.end(), x);
+
+    cout << "lower_bound apunta al valor " << *lo
+         << " en posición " << (lo - v.begin()) << "\n";
+    cout << "upper_bound apunta al valor " << *hi
+         << " en posición " << (hi - v.begin()) << "\n";
+
+    // equal_range:
+    auto range = equal_range(v.begin(), v.end(), x);
+    cout << "equal_range abarca posiciones ["
+         << (range.first  - v.begin()) << ", "
+         << (range.second - v.begin()) << ")\n";
 }
