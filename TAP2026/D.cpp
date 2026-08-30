@@ -15,17 +15,46 @@ const ld EPS = 1e-9;
 
 
 
-void solve() {
-    
+string resta(string n) {
+    string salida;
+    for(char c: n){
+        if()
+
+        salida = salida + to_string(int(c)-1);
+    }
 }
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int tc = 1;
-    // cin >> tc;
-    for (int t = 1; t <= tc; t++) {
-        // cout << "Case #" << t << ": ";
-        solve();
+
+    string n;
+    cin >> n;
+    
+
+
+    int n, cont = 0;
+    ll suma ;
+    cin >> n;
+
+    int decimal = to_string(n).length();
+
+    int a = 0;
+    
+        
+    while(n != 0)
+    {
+        suma =(1 - pow(10, decimal)) / -9;
+        
+        a = n-suma;
+        if(a < 0){
+            decimal -= 1;
+        }else{
+            n = a;
+            cont++;
+        }
     }
+
+    cout << cont;
+    
 }

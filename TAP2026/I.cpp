@@ -22,10 +22,16 @@ void solve() {
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int tc = 1;
-    // cin >> tc;
-    for (int t = 1; t <= tc; t++) {
-        // cout << "Case #" << t << ": ";
-        solve();
+    int n,k;
+    cin >> n >> k;
+
+    
+    if(k == 1){
+        cout << "S";
+    }
+    else if(n == 2 && k % 2 != 0)
+        cout << "S";
+    else{
+        cout << "N";
     }
 }

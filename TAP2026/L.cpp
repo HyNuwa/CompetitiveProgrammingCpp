@@ -13,19 +13,46 @@ const ll MOD = 1e9 + 7;
 const ll INF = 1e9;
 const ld EPS = 1e-9;
 
+struct NODO{
+    char c;
+    NODO *prev = NULL;
+    NODO *next = NULL;
+};
 
-
-void solve() {
-    
-}
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int tc = 1;
-    // cin >> tc;
-    for (int t = 1; t <= tc; t++) {
-        // cout << "Case #" << t << ": ";
-        solve();
+   
+    NODO lista;
+    cin >> lista.c;
+    
+    
+
+    int n= 0;
+    while(true){
+        n++;
+        NODO temp;
+        
+        cin >> temp.c;
+
+        
+        
+        if(cin.peek() == '\n') break;
     }
+
+
+    NODO rec = lista;
+    while(rec.next != NULL){
+        cout << rec.c;
+
+        rec = *rec.next;
+    }
+
+    
+
+    
+
+
+
 }

@@ -22,12 +22,17 @@ void solve() {
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int n, x = 0, s = 0;
-    vector<int> agustin;
-    vector<int> brian;
 
-    for (int t = 1; t <= n; t++) {
-        cin >> 
-        solve();
+    int n = 1;
+    cin >> n;
+    vector<int> comb(n);
+    vector<int> ent = {0, 5, 1, 6, 2, 7, 3, 8, 4};
+
+    for (int i = 0; i < n; i++) {
+        cin >> comb[i];
+    }
+
+    for(int elem: comb){
+        cout << ent[elem] << " ";
     }
 }

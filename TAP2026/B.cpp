@@ -15,17 +15,43 @@ const ld EPS = 1e-9;
 
 
 
-void solve() {
-    
+bool isVocal(char c) {
+    return (c == 'A'|| c == 'E'|| c == 'I'|| c == 'O'|| c == 'U');
 }
 
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int tc = 1;
-    // cin >> tc;
-    for (int t = 1; t <= tc; t++) {
-        // cout << "Case #" << t << ": ";
-        solve();
+    
+    string cad;
+    cin >> cad;
+    int cont = 0, ind;
+    if(cad.length() < 4){
+        cout << "-";
+        return 0;
     }
+
+    for(int i = 1; i < cad.length()-3; i++){
+
+        if(cad[i] == 'G' && cad[i+1] == 'A' && cad[i+2] == 'S' && cad[i-1] == cad[i+3] && isVocal(cad[i-1])){
+            ind = i;
+            i+=4;
+            cont++;
+        }
+
+    }
+    if(cont > 1){
+        cout << "+";
+    } else if(cont == 0){
+        cout << "-";
+    }
+    else {
+        //cout << cad.substr(0, ind);
+        for(int i = 0; i < cad.length(); i++){
+            if(i > ind-1 && i < ind+4) continue;
+            cout << cad[i];
+        }
+    }
+
+    return 0;
 }

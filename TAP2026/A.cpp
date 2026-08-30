@@ -22,10 +22,16 @@ void solve() {
 int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0); cout.tie(0);
-    int tc = 1;
-    // cin >> tc;
-    for (int t = 1; t <= tc; t++) {
-        // cout << "Case #" << t << ": ";
-        solve();
-    }
+    int h, m, s;
+
+    cin >> h >> m >> s;
+
+    int sumaS = h*3600 + m*60 + s;
+    if(sumaS == 9000){
+        cout << "=";
+    }else if(sumaS < 9000){
+        cout << "-";
+    }else 
+    cout << "+";
+    
 }
